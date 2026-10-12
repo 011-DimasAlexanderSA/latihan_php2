@@ -27,10 +27,10 @@
 </form>
 
 <p>Nama Barang : <?php echo $nama_barang ?></p>
-<p>Harga Satuan : <?php echo "Rp".number_format($harga_satuan) ?></p>
+<p>Harga Satuan : <?php if($is_send) echo "Rp".number_format($harga_satuan); else  echo""; ?></p>
 <p>Jumlah Pembelian : <?php echo $jumlah_pembelian ?></p>
-<p>Diskon : <?php echo ($diskon*100)."%" ?></p>
-<p>Total Pembayaran : <?php echo "Rp".number_format($harga_total - ($harga_total * $diskon)) ?></p>
+<p>Diskon : <?php if($is_send) echo ($diskon*100)."%" ;else echo "";?></p>
+<p>Total Pembayaran : <?php if($is_send) echo "Rp".number_format($harga_total - ($harga_total * $diskon)); else echo ""; ?></p>
 
 
 
